@@ -16,7 +16,7 @@ import initializePassport from './config/passport.config.js';
 const app = express();
 
 // MongoDB
-const uri = 'mongodb://127.0.0.1:27017/entrega-final';
+const uri = 'mongodb://127.0.0.1:27017/BE02PreEntrega01';
 mongoose.connect(uri);
 
 // Handlebars

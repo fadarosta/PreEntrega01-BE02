@@ -1,8 +1,14 @@
 import { Router } from 'express';
 import { productDBManager } from '../dao/productDBManager.js';
 import { uploader } from '../utils/multerUtil.js';
+import { ensureAuthenticated } from '../middlewares/authMiddleware.js';
 
 const router = Router();
+
+productRouter.post('/', ensureAuthenticated, (req, res) => {
+    res.send({ message: 'Producto creado' });
+});
+
 const ProductService = new productDBManager();
 
 router.get('/', async (req, res) => {
